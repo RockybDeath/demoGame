@@ -1,0 +1,67 @@
+.red
+    background-color: #000000;
+.game-container
+    // position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #000000;
+.race-items
+    display: flex
+    flex-wrap: wrap
+.race-item
+    margin: 20px
+    width: 380px
+    height: 102px
+    border-radius: 50px
+    border: 1px solid #4b2c0a
+    background-color: #141311
+    word-wrap: break-word
+    text-align: center
+    transition: all 0.4s cubic-bezier(0, 0, 1, 1)
+.race-desc
+    width: 380px
+    padding-left: 10px
+    padding-right: 10px
+    padding-top: 10px
+    color: #ffffff
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.6s cubic-bezier(0, 0, 1, 1)
+.race-item-img
+    border-radius: 100px
+    border: 3px solid green
+    align: left
+    width: 100px
+    height: 100px
+    transition: border 0.1s cubic-bezier(0, 0, 1, 1)
+.race-item-hover-block
+    width: 300px
+    height: 100px
+    text-align: center
+.race-img-block
+    width: 100px
+    border-radius: 100px
+    height: 100px
+    float: left
+    text-align: center
+    cursor: pointer
+.race-img-block:hover .race-item-img
+    border: 5px solid white
+.race-desc-activeBlock
+    visibility: visible
+    opacity: 1
+.race-item-activeBlock
+    height: 300px
+.race-item-hover
+    position: absolute
+    font-size: 34px
+    margin-top: 24px
+    margin-left: 100px
+    width: 300px
+    transition: all 0.8s ease-in-out
+.race-item-hover-activeBlock
+    opacity: 0
+    filter: blur(20px)
