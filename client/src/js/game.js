@@ -30,7 +30,6 @@ export class Game extends React.Component{
         .then(res => res.ok ? res : Promise.reject(res))
         .then(res => res.json())
         .then( (res) => { 
-            console.log(res);
             this.setState({
                 dataRaces: res
             })
