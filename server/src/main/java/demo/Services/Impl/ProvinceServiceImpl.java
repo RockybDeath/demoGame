@@ -6,6 +6,8 @@ import demo.entities.Province;
 import demo.repositories.ProvinceRepository;
 import demo.Services.ProvinceService;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -15,7 +17,14 @@ public class ProvinceServiceImpl implements ProvinceService {
 
     @Override
     public List<Province> getAll() {
-        return provinceRepository.findAll();
+        List<Province> provinceList = provinceRepository.findAll();
+        Collections.sort(provinceList, new Comparator<Province>() {
+            @Override
+            public int compare(Province o1, Province o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        return provinceList;
     }
 
     @Override
@@ -24,12 +33,12 @@ public class ProvinceServiceImpl implements ProvinceService {
     }
 
     @Override
-    public int getFirstProvinceOfRace(String name) {
+    public String getFirstProvinceOfRace(String name) {
         List<Province> provinces = provinceRepository.findAll();
         for(int i=0; i<provinces.size(); i++){
-            if (provinces.get(i).getRace().getName().equals(name)) return i;
+            if (provinces.get(i).getRace().getName().equals(name)) return provinces.get(i).getName();
         }
-        return 0;
+        return "Aga";
     }
 
     @Override

@@ -49,12 +49,11 @@ export class ActiveLand extends React.Component{
   return (
     <div className="user-active">
       <div className="leader_info_block" id="leader_info">
-      <div className="user-active__border">
+        <div className="user-active__border">
         <div className="user-active__top__block">
           <span className="user-active__username">
             Leader - {this.props.leader.name}
           </span>
-          <div className="button-arrow" onClick={() => {document.getElementById("leader_info").style.display = "none"}}></div>
         </div>
         <table className="table table-dark">
           <tbody>

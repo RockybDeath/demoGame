@@ -12,7 +12,6 @@ import demo.Services.ProvinceService;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/map")
 public class ProvinceController {
 
@@ -27,8 +26,8 @@ public class ProvinceController {
     public void captureProvince(@RequestBody JsonNode requestBody){
         provinceService.updateProvince(requestBody.get("name").toString().replace("\"",""),requestBody.get("race").toString().replace("\"",""));
     }
-    @RequestMapping(value = "/position")
-    public int getFirstPosition(@RequestBody JsonNode requestBody){
+    @RequestMapping(value = "/position", method = { RequestMethod.POST, RequestMethod.GET})
+    public String getFirstPosition(@RequestBody JsonNode requestBody){
         return provinceService.getFirstProvinceOfRace(requestBody.get("race").toString().replace("\"",""));
     }
     @RequestMapping(value = "/mining", method = { RequestMethod.POST, RequestMethod.GET} )
